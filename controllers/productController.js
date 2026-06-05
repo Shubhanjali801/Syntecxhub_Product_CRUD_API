@@ -39,7 +39,7 @@ const getAllProducts = async (req, res) => {
         const limitNum = parseInt(limit);
         const skip = (pageNum - 1) * limitNum;
         const total = await Product.countDocuments(filter);
-        const product = await Product.find(filter).skip(skip).limit(limitNum);
+        const products = await Product.find(filter).skip(skip).limit(limitNum);
 
         res.status(200).json({
             success: true,
